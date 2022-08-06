@@ -2,17 +2,17 @@ local os = require("os")
 local sides = require("sides")
 local component = require("component")
 
-rs_address = "deb1"
-rs_side = sides.south
-injectorA_address = "229a"
-injectorB_address = "d7ad"
+local rs_address = "deb1"
+local rs_side = sides.south
+local injectorA_address = "229a"
+local injectorB_address = "d7ad"
 
-rs = component.proxy(component.get(rs_address))
-injectorA = component.proxy(component.get(injectorA_address))
-injectorB = component.proxy(component.get(injectorB_address))
+local rs = component.proxy(component.get(rs_address))
+local injectorA = component.proxy(component.get(injectorA_address))
+local injectorB = component.proxy(component.get(injectorB_address))
 
 
-injectors = { injectorA, injectorB }
+local injectors = { injectorA, injectorB }
 
 
 

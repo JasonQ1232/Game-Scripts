@@ -2,15 +2,15 @@ local os = require("os")
 local component = require("component") 
 local sides = require("sides")
 
-rs_address = "9e0c"
-rs_side = sides.top
-geo_address = "a38c"
-geo_side = sides.top
+local rs_address = "9e0c"
+local rs_side = sides.top
+local geo_address = "a38c"
+local geo_side = sides.top
 
-rs = component.proxy(component.get(rs_address))
-geo = component.proxy(component.get(geo_address))
+local rs = component.proxy(component.get(rs_address))
+local geo = component.proxy(component.get(geo_address))
 
-whitelist = {
+local whitelist = {
     "gregtech:ore_uranium_0", 
     "minecraft:clay", 
     "minecraft:end_stone", 
