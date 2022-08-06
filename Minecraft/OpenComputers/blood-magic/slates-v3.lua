@@ -3,8 +3,6 @@ local os = require("os")
 local sides = require("sides")
 local term = require("term")
 local ba = component.blood_altar
-local tp = component.transposer
---local gpu = component.gpu
 
 --Sides
 --0 Bottom: down, negy
@@ -14,15 +12,16 @@ local tp = component.transposer
 --4 Right: west, negx
 --5 Left: east, posx
 
-
-sides_input_chest = 4
-sides_output_chest = 5
-sides_blood_altar = 3
+sides_input_chest = sides.right
+sides_output_chest = sides.left
+sides_blood_altar = sides.front
 
 altar_min_capacity = 2500
 altar_transfer_count = 1
 
---gpu.setResolution(75,24)
+tp_address = "0597"
+tp = component.proxy(component.get(tp_address))
+
 term.clear()
 altar_insert_error = false
 altar_extract_error = false
