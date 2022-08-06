@@ -12,9 +12,9 @@ local ba = component.blood_altar
 --4 Right: west, negx
 --5 Left: east, posx
 
-sides_input_chest = sides.right
-sides_output_chest = sides.left
-sides_blood_altar = sides.front
+sides_input_chest = sides.west
+sides_output_chest = sides.east
+sides_blood_altar = sides.south
 
 altar_min_capacity = 2500
 altar_transfer_count = 1
