@@ -28,6 +28,7 @@ while true do
         else
             active = false
         end
+        os.sleep(0.5)
     end
 
     if (active) then
