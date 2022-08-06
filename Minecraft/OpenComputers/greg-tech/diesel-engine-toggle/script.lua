@@ -22,7 +22,7 @@ while true do
     for injector in pairs(injectors) do
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
-        if (cur_energy < (max_energy * 0.20)) then
+        if (cur_energy < (max_energy * 0.05)) then
             active = true
         else
             active = false
