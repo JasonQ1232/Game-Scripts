@@ -6,11 +6,20 @@ local ba = component.blood_altar
 local tp = component.transposer
 --local gpu = component.gpu
 
+--Sides
+--0 Bottom: down, negy
+--1 Top: up, posy
+--2 Back: north, negz
+--3 Front: south, posz, forward
+--4 Right: west, negx
+--5 Left: east, posx
+
+
 sides_input_chest = 4
 sides_output_chest = 5
-sides_blood_altar = 2
+sides_blood_altar = 3
 
-altar_min_capacity = 20000
+altar_min_capacity = 2500
 altar_transfer_count = 1
 
 --gpu.setResolution(75,24)
@@ -93,9 +102,21 @@ function altar_extract()
     ::altar_extract_end::
 end
 
+function check_finished()
+    for slot=1, tp.getInventorySize(sides_input_chest), 1 do
+        local item = tp.getStackInSlot(sides_input_chest, slot)
+        if(item ~= nil) then
+            return
+        end
+    end
+    term.write("Input empty, terminating program.")
+    os.exit()
+end
+
 function work()
     user_input_get_target()
     while true do
+        check_finished()
         altar_insert()
         altar_extract()
         os.sleep(0.5)
