@@ -1,10 +1,9 @@
 local os = require("os")
 local component = require("component") 
 local sides = require("sides")
-local colors = require("colors")
 local geo = component.geolyzer
 
-rs_address = "f78"
+rs_address = "2b41"
 rs_side = sides.top
 geo_side = sides.top
 
@@ -35,7 +34,6 @@ function scan()
             block_name = whitelist[block]
             if(result_table.name == block_name) then
                 rs.setOutput(rs_side, 15)
-                os.sleep(0.2)
                 rs.setOutput(rs_side, 0)
             end
         end
@@ -44,4 +42,5 @@ end
 
 while true do
     scan()
+    os.sleep(0.5)
 end
