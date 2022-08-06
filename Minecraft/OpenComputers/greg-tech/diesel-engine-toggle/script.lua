@@ -1,7 +1,6 @@
 local os = require("os")
 local sides = require("sides")
 local component = require("component")
-local term = require("term")
 
 rs_address = "deb1"
 rs_side = sides.south
