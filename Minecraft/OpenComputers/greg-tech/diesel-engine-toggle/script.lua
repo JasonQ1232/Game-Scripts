@@ -17,6 +17,7 @@ local injectors = { injectorA, injectorB }
 
 
 active = false
+while true do
     activate = false
     for injector in pairs(injectors) do
         max_energy = injectors[injector].getMaxEnergyStored()
@@ -35,3 +36,4 @@ active = false
     end
 
     os.sleep(5)
+end
