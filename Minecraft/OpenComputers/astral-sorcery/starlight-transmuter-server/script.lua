@@ -28,21 +28,15 @@ whitelist = {
     "actuallyadditions:block_crystal_cluster_iron"
 }
 
-function scan()
-    while true do
-        result_table = geo.analyze(geo_side)
-        for block in pairs(whitelist) do
-            block_name = whitelist[block]
-            if(result_table.name == block_name) then
-                rs.setOutput(rs_side, 15)
-                rs.setOutput(rs_side, 0)
-            end
-            os.sleep(0.1)
+while true do
+    result_table = geo.analyze(geo_side)
+    for block in pairs(whitelist) do
+        block_name = whitelist[block]
+        if(result_table.name == block_name) then
+            rs.setOutput(rs_side, 15)
+            rs.setOutput(rs_side, 0)
         end
+        os.sleep(0.1)
     end
 end
 
-while true do
-    scan()
-    os.sleep(0.2)
-end
