@@ -44,5 +44,5 @@ end
 
 while true do
     scan()
-    os.sleep(1)
+    os.sleep(0.2)
 end
