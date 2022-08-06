@@ -36,6 +36,7 @@ function scan()
                 rs.setOutput(rs_side, 15)
                 rs.setOutput(rs_side, 0)
             end
+            os.sleep(0.1)
         end
     end
 end
