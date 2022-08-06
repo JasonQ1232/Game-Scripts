@@ -1,13 +1,14 @@
 local os = require("os")
 local component = require("component") 
 local sides = require("sides")
-local geo = component.geolyzer
 
-rs_address = "2b41"
+rs_address = "9e0c"
 rs_side = sides.top
+geo_address = "a38c"
 geo_side = sides.top
 
 rs = component.proxy(component.get(rs_address))
+geo = component.proxy(component.get(geo_address))
 
 whitelist = {
     "gregtech:ore_uranium_0", 
