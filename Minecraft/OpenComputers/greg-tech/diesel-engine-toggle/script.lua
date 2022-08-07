@@ -5,8 +5,8 @@ local term = require("term")
 
 local rs_address = "deb1"
 local rs_side = sides.south
-local injectorA_address = "229a"
-local injectorB_address = "d7ad"
+local injectorA_address = "53f3"
+local injectorB_address = "f02f"
 
 local rs = component.proxy(component.get(rs_address))
 local injectorA = component.proxy(component.get(injectorA_address))
@@ -24,7 +24,7 @@ while true do
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
         -- term.write(injector .. " : " .. cur_energy .. "\n")
-        if (cur_energy < (max_energy * 0.10)) then
+        if (cur_energy < (max_energy * 0.50)) then
             active = true
             activate = true
         elseif (activate == false) then
