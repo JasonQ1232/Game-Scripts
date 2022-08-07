@@ -22,9 +22,9 @@ while true do
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
         -- term.write(injector .. " : " .. cur_energy .. "\n")
-        if (cur_energy < (max_energy * 0.50)) then
+        if (cur_energy < (max_energy * 0.20)) then
             table.insert(status, true)
-        else
+        elseif (cur_energy > (max_energy * 0.80)) then
             table.insert(status, false)
         end
     end
