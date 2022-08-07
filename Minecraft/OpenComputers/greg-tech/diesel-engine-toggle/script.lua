@@ -21,7 +21,7 @@ while true do
     for injector in pairs(injectors) do
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
-        term.write(injector .. " : " .. cur_energy .. "\n")
+        --term.write(injector .. " : " .. cur_energy .. "\n")
         if (cur_energy < (max_energy * 0.20)) then
             table.insert(status, true)
             term.write("true" .. "\n")
@@ -35,7 +35,7 @@ while true do
     for i in pairs(status) do
         if (status[i] == true) then
             activate = true
-            term.write("activate generator" .. "\n")
+            --term.write("activate generator" .. "\n")
             break
         end
     end
