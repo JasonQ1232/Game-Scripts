@@ -3,10 +3,10 @@ local sides = require("sides")
 local component = require("component")
 local term = require("term")
 
-local rs_address = "deb1"
-local rs_side = sides.south
-local injectorA_address = "53f3"
-local injectorB_address = "f02f"
+local rs_address = "a466"
+local rs_side = sides.east
+local injectorA_address = "c48c"
+local injectorB_address = "ebf6"
 
 local rs = component.proxy(component.get(rs_address))
 local injectorA = component.proxy(component.get(injectorA_address))
