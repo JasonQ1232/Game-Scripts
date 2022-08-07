@@ -36,7 +36,7 @@ while true do
             rs.setOutput(rs_side, 15)
             rs.setOutput(rs_side, 0)
         end
-        os.sleep(1)
     end
+    os.sleep(0.2)
 end
 
