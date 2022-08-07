@@ -21,12 +21,13 @@ active = false
 while true do
     activate = false
     for injector in pairs(injectors) do
-        term.write(injector .. injectors[injector] .. "\n")
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
+        -- term.write(injector .. " : " .. cur_energy .. "\n")
         if (cur_energy < (max_energy * 0.10)) then
             active = true
-        else
+            activate = true
+        elseif (activate == false) then
             active = false
         end
     end
@@ -36,6 +37,5 @@ while true do
     else
         rs.setOutput(rs_side, 0)
     end
-
     os.sleep(5)
 end
