@@ -24,7 +24,7 @@ while true do
         -- term.write(injector .. " : " .. cur_energy .. "\n")
         if (cur_energy < (max_energy * 0.20)) then
             table.insert(status, true)
-        elseif (cur_energy > (max_energy * 0.80)) then
+        elseif (cur_energy > (max_energy * 0.75)) then
             table.insert(status, false)
         end
     end
