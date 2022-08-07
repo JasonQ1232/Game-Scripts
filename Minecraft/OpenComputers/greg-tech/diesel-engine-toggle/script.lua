@@ -14,21 +14,26 @@ local injectorB = component.proxy(component.get(injectorB_address))
 
 
 local injectors = { injectorA, injectorB }
-
-
+local status = {}
 
 active = false
 while true do
-    activate = false
     for injector in pairs(injectors) do
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
         -- term.write(injector .. " : " .. cur_energy .. "\n")
         if (cur_energy < (max_energy * 0.50)) then
-            active = true
+            table.insert(status, true)
+        else
+            table.insert(status, false)
+        end
+    end
+
+    activate = false
+    for i=1, status do
+        if (status[i] == true) then
             activate = true
-        elseif (activate == false) then
-            active = false
+            break
         end
     end
 
@@ -37,5 +42,10 @@ while true do
     else
         rs.setOutput(rs_side, 0)
     end
+
+    for i=1, status do
+        status[i] = nil
+    end
+
     os.sleep(5)
 end
