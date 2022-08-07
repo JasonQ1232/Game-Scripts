@@ -1,6 +1,7 @@
 local os = require("os")
 local sides = require("sides")
 local component = require("component")
+local term = require("term")
 
 local rs_address = "deb1"
 local rs_side = sides.south
@@ -20,6 +21,7 @@ active = false
 while true do
     activate = false
     for injector in pairs(injectors) do
+        term.write(injector .. injectors[injector] .. "\n")
         max_energy = injectors[injector].getMaxEnergyStored()
         cur_energy = injectors[injector].getEnergyStored()
         if (cur_energy < (max_energy * 0.10)) then
